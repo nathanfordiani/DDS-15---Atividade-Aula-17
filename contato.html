@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contato</title>
+    <link rel="stylesheet" type="text/css" href="contato.css">
+</head>
+
+<body>
+    <div class="fundo"></div>
+    <div class="container">
+
+
+        <h1>Preencha os campos, entraremos em contato.</h1>
+
+        <form>
+            <label for="nome">Nome:</label>
+            <input id="nome" name="nome" type="text" placeholder="Nome">
+            <br>
+            <label for="email">E-mail:</label>
+            <input id="email" name="email" type="email" placeholder="E-mail">
+            <br>
+            <label for="telefone">Telefone:</label>
+            <input id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" type="tel">
+            <br>
+            <input class="submit" type="submit" placeholder="Enviar">
+
+        </form>
+
+    </div>
+    <footer>
+        <form>
+            <div>
+                <label for="material">Material</label><br>
+                <select name="material" id="material">
+                    <option value="Tijollinho" selected="true" id="material-0">Tijolinho</option>
+                    <option value="Cimento" id="material-1">Cimento</option>
+                    <option value="Vaso Sanitário" id="material-2">Vaso Sanitário</option>
+                </select>
+            </div>
+            <div>
+                <label for="quantidade">Quantidade</label><br>
+                <input type="number" name="quantidade" access="false" id="quantidade" placeholder="Quantidade">
+            </div>
+            <div class="range-slider">
+                <label for="rs-label">Telefone para Contato:</label>
+                <span id="rs-bullet" class="rs-label">0</span>
+                <input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="9999999999">
+
+            </div>
+            <input class="submit" type="submit" placeholder="Enviar">
+        </form>
+
+
+    </footer>
+
+    <script>
+        var rangeSlider = document.getElementById("rs-range-line");
+        var rangeBullet = document.getElementById("rs-bullet");
+
+        rangeSlider.addEventListener("input", showSliderValue, false);
+
+        function showSliderValue() {
+            rangeBullet.innerHTML = rangeSlider.value;
+            var bulletPosition = (rangeSlider.value / rangeSlider.max);
+            rangeBullet.style.left = (bulletPosition * 578) + "px";
+        }
+
+    </script>
+</body>
+
+</html>
